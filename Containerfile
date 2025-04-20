@@ -20,7 +20,6 @@ RUN dnf install -y \
     grub2-tools-efi \
     grub2-tools
 
-RUN mkdir -p /sysroot/ostree/repo
-RUN mkdir -p /usr/lib/ostree
+RUN mkdir -p /sysroot/ostree/repo /usr/lib/ostree
 COPY prepare-root.conf /usr/lib/ostree/prepare-root.conf
 LABEL containers.bootc=1
