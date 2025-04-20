@@ -38,4 +38,10 @@ bootc-install:
      {{test_img}}
 
 vm:
-    qemu-kvm 
+    qemu-kvm \
+        -m 4G \
+        -cpu host \
+        -smp 4 \
+        -bios /usr/share/OVMF/OVMF_CODE.fd \
+        -drive file={{test_img}},format=raw \
+        -vga qxl
