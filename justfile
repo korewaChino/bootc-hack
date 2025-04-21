@@ -17,6 +17,7 @@ install: build
         --mount type=bind,source=/dev,target=/dev \
         --privileged \
         --pid=host \
+        -e BOOTC_BOOTLOADER_DEBUG="-vvvv" \
         --cap-add=SYS_ADMIN \
         --device /dev/fuse \
         {{container}} \
