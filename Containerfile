@@ -21,5 +21,6 @@ RUN dnf install -y \
     grub2-tools
 
 RUN mkdir -p /sysroot/ostree/repo /usr/lib/ostree
+RUN bootupctl backend generate-metadata
 COPY prepare-root.conf /usr/lib/ostree/prepare-root.conf
 LABEL containers.bootc=1
